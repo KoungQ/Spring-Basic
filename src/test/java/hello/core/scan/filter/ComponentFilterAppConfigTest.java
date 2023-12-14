@@ -28,7 +28,9 @@ public class ComponentFilterAppConfigTest {
     @Configuration
     @ComponentScan(
             includeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyIncludeComponent.class),
+                // 어노테이션 타입 중이 MyIncludeComponent 클래스를 include 한다.
             excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class)
+                // 어노테이션 타입 중이 MyExcludeComponent 클래스를 exclude 한다.
     )
     static class ComponentFilterAppConfig {
 

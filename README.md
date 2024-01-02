@@ -1,5 +1,9 @@
 # Inflearn: 스프링 핵심 원리 - 기본편
 
+<br>
+
+[노션 링크](https://www.notion.so/Inflearn-8daa7d6e0e19464390d1488f50314e8b?pvs=4)
+
 <br><br>
 
 > ## 목차 

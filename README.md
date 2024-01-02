@@ -1,9 +1,5 @@
 # Inflearn: 스프링 핵심 원리 - 기본편
 
-<br>
-
-[노션 링크](https://www.notion.so/Inflearn-8daa7d6e0e19464390d1488f50314e8b?pvs=4)
-
 <br><br>
 
 > ## 목차 
@@ -751,3 +747,7 @@ myLogger = class hello.core.common.MyLogger$$EnhancerBySpringCGLIB$$0
 Request 스코프를 사용하던, 프록시를 사용하던 핵심 아이디어는 진짜 객체 조회를 꼭 필요한 시점까지 지연한다는 점이다.
 
 하지만 이런 특별한 scope는 꼭 필요한 곳에만 최소화해서 사용하자, 무분별하게 사용하면 유지보수하기 어려워진다.
+
+<br>
+
+[Notion](https://www.notion.so/Inflearn-8daa7d6e0e19464390d1488f50314e8b?pvs=4)

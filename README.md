@@ -1,5 +1,7 @@
 # Inflearn: 스프링 핵심 원리 - 기본편
 
+<br><br>
+
 > ## 목차 
 >
  >1. [객체 지향 설계와 스프링](#chapter-1-객체-지향-설계와-스프링)
@@ -12,6 +14,7 @@
    >8. [빈 생명주기 콜백](#chapter-8-빈-생명주기-콜백)
  >9. [빈 스코프](#chapter-9-빈-스코프)
 
+<br><br>
 
 # Chapter 1. 객체 지향 설계와 스프링
 
@@ -77,8 +80,11 @@
 ![Untitled](https://github.com/SpringArchive/Spring-Basic/assets/96408601/2eff66f9-9b3e-4d27-99c2-ad6ead271438)
 
 
+<br>
+
 # Chapter 3. 스프링 핵심 원리 이해 2 - 객체 지향 원리 적용
 
+---
 &emsp; **제어의 역전 IoC (Inversion Of Control)**
 
 &emsp; &emsp; 기존 프로그램은 클라이언트 구현 객체가 스스로 필요한 서버 구현 객체를 생성, 연결, 실행했다.
@@ -115,28 +121,45 @@
 
 &emsp; &emsp; AppConfig처럼 객체를 생성하고 관리하면서 의존 관계를 연결해 주는 것을 Ioc 컨테이너, DI 컨테이너라고 부른다
 
+<br>
+
 # Chapter 4. 스프링 컨테이너와 스프링 빈
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled%206.png)
+---
 
-**Bean Factory**
+![Untitled 6](https://github.com/SpringArchive/Spring-Basic/assets/96408601/01c680ff-87f5-4ff9-bc33-8a5bc5048490)
 
-- 스프링 컨테이너의 최상위 인터페이스이다.
-- 스프링 빈을 관리하고 조회하는 역할을 담당한다.
-- `getBean()`을 제공한다.
-- 지금까지 우리가 사용했던 대부분의 기능은 BeanFactory가 제공하는 기능이다.
+&emsp; **Bean Factory**
 
-**ApplicationContext**
+&emsp; &emsp; - 스프링 컨테이너의 최상위 인터페이스이다.
 
-- BeanFactory 기능을 모두 상속받아서 제공
-- 빈을 관리하고 검색하는 기능을 BeanFactory가 제공해주는데 그 외의 필요한 부가 기능들은 ApplicationContext가 제공한다.
-- ApplicationContext가 제공하는 부가 기능
-    1. 메세지 소스를 활용한 국제화 기능
-    2. 환경변수
-    3. 애플리케이션 이벤트
-    4. 편리한 리소스 조회
+&emsp; &emsp; - 스프링 빈을 관리하고 조회하는 역할을 담당한다.
+
+&emsp; &emsp; - `getBean()`을 제공한다.
+
+&emsp; &emsp; - 지금까지 우리가 사용했던 대부분의 기능은 BeanFactory가 제공하는 기능이다.
+
+&emsp; **ApplicationContext**
+
+&emsp; &emsp; - BeanFactory 기능을 모두 상속받아서 제공
+
+&emsp; &emsp; - 빈을 관리하고 검색하는 기능을 BeanFactory가 제공해주는데 그 외의 필요한 부가 기능들은 ApplicationContext가 제공한다.
+
+&emsp; &emsp; - ApplicationContext가 제공하는 부가 기능
+
+&emsp; &emsp; &emsp;     1. 메세지 소스를 활용한 국제화 기능
+
+&emsp; &emsp; &emsp;     2. 환경변수
+
+&emsp; &emsp; &emsp;     3. 애플리케이션 이벤트
+
+&emsp; &emsp; &emsp;     4. 편리한 리소스 조회
+
+<br>
 
 # Chapter 5. 싱글톤 컨테이너
+
+---
 
 만약 내가 만든 웹 어플리케이션이 싱글톤이 아닌 형태로 구성되어 있다면,
 
@@ -356,18 +379,19 @@ public class AppConfig {
 
 이와 같은 결과를 확인할 수 있는데, 여기서 SpringCGLIB는 순수 클래스가 아닌 **스프링이 CGLIB라는 바이트 코드 조작 라이브러리를 사용하여 AppConfig 클래스를 상속받은 임의의 다른 클래스를 만들고 그 클래스를 스프링 빈으로 등록**한 것을 의미한다.
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled%207.png)
+![Untitled 7](https://github.com/SpringArchive/Spring-Basic/assets/96408601/bdf7e84f-55fd-49c1-a7c9-d8e00b250e15)
 
 추측컨데 CGLIB의 내부 기술로 만든 클래스는
 
 ```java
 @Bean
 public MemberRepository memberRepository() {
+    
     if(memoryMemberRepository가 이미 스프링 컨테이너에 등록되어 있다면) {
-                return 스프링 컨테이너에서 찾아서 반환;
+        return 스프링 컨테이너에서 찾아서 반환;
     } else {
-                기존 로직을 호출하여 MemoryMemberRepository를 생성하고 스프링 컨테이너에 등록
-                return 반환
+        기존 로직을 호출하여 MemoryMemberRepository를 생성하고 스프링 컨테이너에 등록
+        return 반환
     }
 }
 ```
@@ -378,7 +402,11 @@ public MemberRepository memberRepository() {
 
 따라서 스프링 설정 정보는 항상 @Configuration을 사용하는 것이 좋다.
 
+<br>
+
 # Chapter 6. 컴포넌트 스캔
+
+---
 
 지금까지는 자바 코드의 `@Bean`을 통해 설정 정보에 수동으로 등록할 스프링 빈을 나열했다.
 
@@ -401,25 +429,25 @@ public class AutoAppConfig {
 
 첫 번째 파라미터 타입에 들어갈 수 있는 속성들이다.
 
-1. FilterType.ANNOTATION
+&emsp; 1. FilterType.ANNOTATION
 
-   기본 값, 어노테이션을 인식하여 동작
+&emsp; &emsp;    기본 값, 어노테이션을 인식하여 동작
 
-2. FilterType.ASSIGNABLE_TYPE
+&emsp;  2. FilterType.ASSIGNABLE_TYPE
 
-   지정한 타입과 자식 타입을 인식해서 동작
+&emsp; &emsp;    지정한 타입과 자식 타입을 인식해서 동작
 
-3. FilterType..ASPECTJ
+&emsp; 3. FilterType..ASPECTJ
 
-   AspectJ 패턴 사용
+&emsp; &emsp;    AspectJ 패턴 사용
+ 
+&emsp; 4. FilterType.REGEX
+ 
+&emsp; &emsp;    정규 표현식
 
-4. FilterType.REGEX
+&emsp; 5. FilterType.CUSTOM
 
-   정규 표현식
-
-5. FilterType.CUSTOM
-
-   TypeFilter라는 인터페이스를 구현해서 처리
+&emsp; &emsp;    TypeFilter라는 인터페이스를 구현해서 처리
 
 다음으로 클래스는 앞에 해당하는 타입의 클래스를 담으면 되는데 위로 예시를 들자면 “어노테이션 타입의 Configuration 클래스를 제외한다”를 의미한다.
 
@@ -459,7 +487,11 @@ public class MemberServiceImpl implements MemberService {
 
 하지만 코드를 작성하는데 개인 차가 있으므로 서로 꼬일 수 있는 상황이 존재한다. 따라서 이를 방지하기 위해 스프링은 오버라이딩하고 넘어가게 되지만, 스프링 부트에서는 에러를 발생한다. → `Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true` 에러 발생
 
+<br>
+
 # Chapter 7. 의존 관계 자동 주입
+
+---
 
 의존 관계 주입은 크게 4가지 방법이 있다.
 
@@ -613,7 +645,11 @@ public class AllBeanTest {
 
 애플리케이션에 광범위하게 영향을 미치는 기술 지원 객체는 수동 빈으로 등록해서 설정 정보가 바로 나타나게 하는 것이 유지 보수 하기에 좋다.
 
+<br>
+
 # Chapter 8. 빈 생명주기 콜백
+
+---
 
 스프링 빈은 **객체 생성 → 의존관계 주입**의 라이프 사이클을 가진다.
 
@@ -649,7 +685,11 @@ public class AllBeanTest {
 
    단점으로는 외부 라이브러리에는 적용하지 못한다는 것이다. 따라서 외부 라이브러리를 초기화, 종료해야 한다면 두 번째 방법을 사용하자
 
+<br>
+
 # Chapter 9. 빈 스코프
+
+---
 
 빈 스코프란 스프링 빈이 존재할 수 있는 범위를 뜻한다.
 

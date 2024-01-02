@@ -18,7 +18,7 @@
 
 # Chapter 1. 객체 지향 설계와 스프링
 
----
+
 **좋은 객체 지향 설계의 5가지 원칙 (SOLID)**
 
 &emsp; **SRP : 단일 책임 원칙 (Single Responsibility Principle)**
@@ -27,7 +27,7 @@
 
 &emsp; &emsp; 변경이 있을 때 파급효과가 적으면 단일 책임 원칙을 잘 따른 것
 
-**OCP : 개방-폐쇠 원칙 (Open/Closed Principle)**
+&emsp; **OCP : 개방-폐쇠 원칙 (Open/Closed Principle)**
 
 &emsp; &emsp; 소프트웨어 요소는 확장에는 열려있으나 변경에는 닫혀있어야 한다.
  
@@ -45,17 +45,17 @@
 
 &emsp; &emsp; &emsp; → 쉽게 부품을 교체하듯 개발
 
-**LSP : 리스코프 치환 원칙 (Liskov Substitution Principle)**
+&emsp; **LSP : 리스코프 치환 원칙 (Liskov Substitution Principle)**
 
 &emsp; &emsp; 프로그램 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다.
  
 &emsp; &emsp; 단순히 컴파일에 성공하는 것을 넘어서는 이야기
 
-**ISP : 인터페이스 분리 원칙 (Interface Segregation Principle)**
+&emsp; **ISP : 인터페이스 분리 원칙 (Interface Segregation Principle)**
 
 &emsp; &emsp; 특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.
 
-**DIP : 의존관계 역전 원칙 (Dependency Inversion Principle)**
+&emsp; **DIP : 의존관계 역전 원칙 (Dependency Inversion Principle)**
 
 &emsp; &emsp; 프로그래머는 추상화에 의존해야지, 구체화에 의존하면 안된다.
 
@@ -84,7 +84,7 @@
 
 # Chapter 3. 스프링 핵심 원리 이해 2 - 객체 지향 원리 적용
 
----
+
 &emsp; **제어의 역전 IoC (Inversion Of Control)**
 
 &emsp; &emsp; 기존 프로그램은 클라이언트 구현 객체가 스스로 필요한 서버 구현 객체를 생성, 연결, 실행했다.
@@ -125,7 +125,7 @@
 
 # Chapter 4. 스프링 컨테이너와 스프링 빈
 
----
+
 
 ![Untitled 6](https://github.com/SpringArchive/Spring-Basic/assets/96408601/01c680ff-87f5-4ff9-bc33-8a5bc5048490)
 
@@ -159,7 +159,7 @@
 
 # Chapter 5. 싱글톤 컨테이너
 
----
+
 
 만약 내가 만든 웹 어플리케이션이 싱글톤이 아닌 형태로 구성되어 있다면,
 
@@ -406,7 +406,7 @@ public MemberRepository memberRepository() {
 
 # Chapter 6. 컴포넌트 스캔
 
----
+
 
 지금까지는 자바 코드의 `@Bean`을 통해 설정 정보에 수동으로 등록할 스프링 빈을 나열했다.
 
@@ -491,7 +491,7 @@ public class MemberServiceImpl implements MemberService {
 
 # Chapter 7. 의존 관계 자동 주입
 
----
+
 
 의존 관계 주입은 크게 4가지 방법이 있다.
 
@@ -649,7 +649,7 @@ public class AllBeanTest {
 
 # Chapter 8. 빈 생명주기 콜백
 
----
+
 
 스프링 빈은 **객체 생성 → 의존관계 주입**의 라이프 사이클을 가진다.
 
@@ -689,7 +689,7 @@ public class AllBeanTest {
 
 # Chapter 9. 빈 스코프
 
----
+
 
 빈 스코프란 스프링 빈이 존재할 수 있는 범위를 뜻한다.
 

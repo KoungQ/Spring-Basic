@@ -58,59 +58,62 @@
 
 &emsp; &emsp; 쉽게 말해 구현 클래스에 의존하지 말고, 인터페이스에 의존하라는 뜻
 
+<br>
+
 # Chapter 2. 스프링 핵심 원리 이해 1 - 예제 만들기
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled.png)
+![Untitled](https://github.com/SpringArchive/Spring-Basic/assets/96408601/74f16632-1a79-444b-ad28-5ea26bef115b)
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled%201.png)
+![Untitled](https://github.com/SpringArchive/Spring-Basic/assets/96408601/8a66aa6c-4fe9-4646-b269-f85a11e7bc0b)
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled%202.png)
+![Untitled](https://github.com/SpringArchive/Spring-Basic/assets/96408601/6866fb21-0d0a-4b46-a957-b2cf900cb86f)
 
 ---
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled%203.png)
+![Untitled](https://github.com/SpringArchive/Spring-Basic/assets/96408601/6f02c054-cbde-4048-bc8c-9e3d79c549a6)
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled%204.png)
+![Untitled](https://github.com/SpringArchive/Spring-Basic/assets/96408601/0d90f3e7-e4d2-4eb4-a227-e9c218127117)
 
-![Untitled](Inflearn%20%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%92%E1%85%A2%E1%86%A8%E1%84%89%E1%85%B5%E1%86%B7%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%20-%20%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%91%E1%85%A7%E1%86%AB%208daa7d6e0e19464390d1488f50314e8b/Untitled%205.png)
+![Untitled](https://github.com/SpringArchive/Spring-Basic/assets/96408601/2eff66f9-9b3e-4d27-99c2-ad6ead271438)
+
 
 # Chapter 3. 스프링 핵심 원리 이해 2 - 객체 지향 원리 적용
 
-**제어의 역전 IoC (Inversion Of Control)**
+&emsp; **제어의 역전 IoC (Inversion Of Control)**
 
-기존 프로그램은 클라이언트 구현 객체가 스스로 필요한 서버 구현 객체를 생성, 연결, 실행했다.
+&emsp; &emsp; 기존 프로그램은 클라이언트 구현 객체가 스스로 필요한 서버 구현 객체를 생성, 연결, 실행했다.
 
-하지만 AppConfig가 등장한 이후에 구현 객체는 자신의 로직을 실행하는 역할만 담당하고 프로그램의 흐름은 AppConfig가 제어한다.
+&emsp; &emsp; 하지만 AppConfig가 등장한 이후에 구현 객체는 자신의 로직을 실행하는 역할만 담당하고 프로그램의 흐름은 AppConfig가 제어한다.
 
-이렇듯 **프로그램의 제어 흐름을 구현 객체가 직접 제어하는 것이 아니라 외부(AppConfig)에서 관리**하는 것을 제어의 역전(IoC)라고 한다.
+&emsp; &emsp; 이렇듯 **프로그램의 제어 흐름을 구현 객체가 직접 제어하는 것이 아니라 외부(AppConfig)에서 관리**하는 것을 제어의 역전(IoC)라고 한다.
 
-**의존 관계 주입 DI (Dependency Injection)**
+&emsp; **의존 관계 주입 DI (Dependency Injection)**
 
-DI는 외부에서 객체 간의 관계(의존성)를 결정해주는데 즉, 객체를 직접 생성하는 것이 아니라 외부에서 생성 후 주입시켜 주는 방식이라 할 수 있다. 이를 통해 객체 간의 관계를 동적으로 주입하여 유연성을 확보하고 결합도를 낮출 수 있다.
+&emsp; &emsp; DI는 외부에서 객체 간의 관계(의존성)를 결정해주는데 즉, 객체를 직접 생성하는 것이 아니라 외부에서 생성 후 주입시켜 주는 방식이라 할 수 있다. 이를 통해 객체 간의 관계를 동적으로 주입하여 유연성을 확보하고 결합도를 낮출 수 있다.
 
-DI 방법 3가지
+&emsp; DI 방법 3가지
 
-1. **Construct Injection (생성자 주입)**
+&emsp; &emsp; 1. **Construct Injection (생성자 주입)**
 
-   현재 가장 권장되는 의존 관계 주입 방식이다.
+&emsp; &emsp; &emsp; 현재 가장 권장되는 의존 관계 주입 방식이다.
 
-   오직 생성자 주입만이 **final 키워드를 사용**할 수 있고, 이를 사용하기에 값이 한번 할당 되면 변경할 수 없기에 **객체의 불변성**이 보장된다
+&emsp; &emsp; &emsp;    오직 생성자 주입만이 **final 키워드를 사용**할 수 있고, 이를 사용하기에 값이 한번 할당 되면 변경할 수 없기에 **객체의 불변성**이 보장된다
 
-   초기에 할당되기에 NullPointerException이 절대 발생하지 않는다.
+&emsp; &emsp; &emsp;    초기에 할당되기에 NullPointerException이 절대 발생하지 않는다.
 
-2. **Field Injection (필드 주입)**
+&emsp; &emsp; 2. **Field Injection (필드 주입)**
 
-   Bean으로 등록된 객체를 사용하고자 하는 클래스에 Field로 선언한 뒤 @Autowired 어노테이션만 붙여주면 자동으로 의존 관계가 주입된다. (세가지 방식 중 가장 간단한 방법)
+&emsp; &emsp; &emsp;    Bean으로 등록된 객체를 사용하고자 하는 클래스에 Field로 선언한 뒤 @Autowired 어노테이션만 붙여주면 자동으로 의존 관계가 주입된다. (세가지 방식 중 가장 간단한 방법)
 
-   생성자 주입을 뺀 나머지(필드 주입, Setter 주입)은 모두 생성자 이후에 호출되므로, 필드에 final 키워드를 사용할 수 없다.
+&emsp; &emsp; &emsp;    생성자 주입을 뺀 나머지(필드 주입, Setter 주입)은 모두 생성자 이후에 호출되므로, 필드에 final 키워드를 사용할 수 없다.
 
-3. **Setter Injection (Setter 주입)**
+&emsp; &emsp; 3. **Setter Injection (Setter 주입)**
 
-   Spring에서 @Autowired 어노테이션을 사용하여 Setter 메서드를 통해 주입하는 방법
+&emsp; &emsp; &emsp;    Spring에서 @Autowired 어노테이션을 사용하여 Setter 메서드를 통해 주입하는 방법
 
-**Ioc 컨테이너, DI 컨테이너**
+&emsp; **Ioc 컨테이너, DI 컨테이너**
 
-AppConfig처럼 객체를 생성하고 관리하면서 의존 관계를 연결해 주는 것을 Ioc 컨테이너, DI 컨테이너라고 부른다
+&emsp; &emsp; AppConfig처럼 객체를 생성하고 관리하면서 의존 관계를 연결해 주는 것을 Ioc 컨테이너, DI 컨테이너라고 부른다
 
 # Chapter 4. 스프링 컨테이너와 스프링 빈
 
